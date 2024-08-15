@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e3f2fd;
+      }
+      .card {
+        padding: 10px;
+      }
+      .card-title {
+        font-weight: 600;
+        font-size: 1em;
+        padding: 0 0 10px 0;
+      }
+      .card-description {
+        font-weight: 400;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="card-template">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"></div>
+          <div class="card-text"></div>
+        </div>
+      </div>
+    </template>
+
+    <div id="card-list"></div>
+
+    <script>
+      const data = [
+        {
+          title: "Name",
+          text: "Bob",
+        },
+        {
+          title: "Age",
+          text: "23",
+        },
+        {
+          title: "Name",
+          text: "Alice",
+        },
+        {
+          title: "Age",
+          text: "39",
+        },
+      ];
+
+      function addCard(title, text) {
+        //clone template
+        const template = document
+          .getElementById("card-template")
+          .content.cloneNode(true);
+
+        //populate the template
+        template.querySelector(".card-title").innerText = title;
+
+        template.querySelector(".card-text").innerText = text;
+
+        //include the populated template into the page
+        document.querySelector("#card-list").appendChild(template);
+      }
+
+      addCard(data[0].title, data[0].text);
+      addCard(data[1].title, data[1].text);
+      addCard(data[2].title, data[2].text);
+      addCard(data[3].title, data[3].text);
+
+      data.forEach((element) => {
+        console.log(element);
+      });
+
+      addCard(element.title, element.text);
+    </script>
+  </body>
+</html>
