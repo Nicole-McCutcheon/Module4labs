@@ -24,6 +24,7 @@
     <template id="card-template">
       <div class="card">
         <div class="card-body">
+          <div class="card-artist"></div>
           <div class="card-title"></div>
           <div class="card-text"></div>
         </div>
@@ -43,13 +44,15 @@
       ]
       }
 
-            function addCard(title, url) {
+            function addCard(artist, title, url) {
               //clone template
               const template = document
                 .getElementById("card-template")
                 .content.cloneNode(true);
 
               //populate the template
+              template.querySelector(".card-artist").innerText = artist;
+
               template.querySelector(".card-title").innerText = title;
 
               template.querySelector(".card-text").innerText = url;
@@ -58,10 +61,10 @@
               document.querySelector("#card-list").appendChild(template);
             }
 
-            addCard(portfolio[0].title, portfolio[0].url);
-            addCard(portfolio[1].title, portfolio[1].url);
-            addCard(portfolio[2].title, portfolio[2].url);
-            addCard(portfolio[3].title, portfolio[3].url);
+            addCard(artist.name, artist.portfolio[0].title, artist.portfolio[0].url);
+            addCard(artist.name, artist.portfolio[1].title, artist.portfolio[1].url);
+            addCard(artist.name, artist.portfolio[2].title, artist.portfolio[2].url);
+            addCard(artist.name, artist.portfolio[3].title, artist.portfolio[3].url);
 
             portfolio.forEach((element) => {
               console.log(element);
