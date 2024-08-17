@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box transition</title>
+    <style>
+        .upDown { animation-name: slidedown;
+            animation-duration: 3s;
+            animation-iteration-count: 2;}
+
+            @keyframes slidedown {
+                from {
+                    margin-top: 100%;}
+                50% {
+                    margin-bottom: 40%;
+                }
+                to { 
+                    margin-bottom: 94%; }
+            }
+
+            .upDown2 { animation-name: slidedown;
+            animation-duration: 3s;
+            animation-iteration-count: 2;}
+
+            @keyframes slidup {
+                from {
+                    margin-top: 100%;}
+                50% {
+                    margin-bottom: 60%;
+                }
+                to { 
+                    margin-bottom: 94%; }
+            }
+    </style>
+</head>
+<body>
+    <div style ="background-color: red; width: 100px; height: 50px;" class="upDown">
+    
+    <br>
+    <div style="background-color: orange; width: 100px; height: 50px;" class="upDown2">
+    </div>
+</body>
+</html>
